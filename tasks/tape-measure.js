@@ -90,7 +90,7 @@ module.exports = function  (grunt) {
       'quality': 0.8,
       'progressive': false,
       'format':'jpg',
-      'glob':'**/*.jpg'
+      'glob':'*.jpg'
     });
 
     buildImages(options, function () {
