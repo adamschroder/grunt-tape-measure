@@ -7,12 +7,11 @@ module.exports = function  (grunt) {
   var async = require('async');
   var glob = require('glob');
   var path = require('path');
-  var options;
 
-  function buildBackground (obj, callback) {
+  function buildImage (options, data, callback) {
 
-    var image = obj.image;
-    var size = obj.size;
+    var image = data.image;
+    var size = data.size;
 
     var srcPath = path.join(options.sourceDir, image);
     var destPath = path.join(options.baseDir, size, image);
@@ -35,7 +34,7 @@ module.exports = function  (grunt) {
     });
   }
 
-  function buildBackgrounds (callback) {
+  function buildImages (options, callback) {
 
     var pattern = '**/*.' + options.format;
 
@@ -55,7 +54,7 @@ module.exports = function  (grunt) {
       images.forEach(function (image) {
 
         // Except the ones explicitely excluded
-        if(options.excluded.indexOf(image) > -1) {
+        if (options.excluded.indexOf(image) > -1) {
           return;
         }
 
@@ -71,7 +70,7 @@ module.exports = function  (grunt) {
       });
 
       // run a parallel build
-      async.mapSeries(builders, buildBackground, callback);
+      async.mapSeries(builders, buildImage.bind(null, options), callback);
     });
   }
 
@@ -85,7 +84,8 @@ module.exports = function  (grunt) {
 
     var done = this.async();
     var target = this.target;
-    options = this.options({
+
+    var options = this.options({
       'srcDir':'../',
       'excluded': [],
       'sizes': [640, 768, 1024, 2048],
@@ -94,14 +94,8 @@ module.exports = function  (grunt) {
       'format':'jpg'
     });
 
-
-    var baseDir = options.baseDir;
-    var sourceDir = options.srcDir;
-    var quality = options.quality;
-    var progressive = options.progressive;
-    var format = options.format;
-
-    var excluded = options.excluded;
-    var sizes = options.sizes;
+    buildImages(options, function () {
+      done();
+    });
   });
 };
