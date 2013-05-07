@@ -13,7 +13,7 @@ module.exports = function  (grunt) {
     var image = data.image;
     var size = data.size;
 
-    var srcPath = path.join(options.sourceDir, image);
+    var srcPath = path.join(options.srcDir, image);
     var destPath = path.join(options.baseDir, size, image);
 
     imageMagick.resize({
@@ -29,7 +29,7 @@ module.exports = function  (grunt) {
         handleError(err);
       }
 
-      grunt.log.ok('\u2713'.green, image, size + 'px');
+      grunt.log('\u2713'.green, image, size + 'px');
       callback(null, destPath);
     });
   }
