@@ -1,6 +1,6 @@
 grunt-tape-measure
 ==================
-Bulk resize files to sizes
+Bulk resize files to taste
 
 Getting Started
 ==================
