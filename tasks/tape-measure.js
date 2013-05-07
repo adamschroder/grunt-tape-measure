@@ -4,9 +4,10 @@ module.exports = function  (grunt) {
   'use strict';
 
   var imageMagick = require('imagemagick');
-  var async = require('async');
   var glob = require('glob');
   var path = require('path');
+
+  var async = grunt.util.async;
 
   function buildImage (options, data, callback) {
 
@@ -29,7 +30,7 @@ module.exports = function  (grunt) {
         handleError(err);
       }
 
-      grunt.log('\u2713'.green, image, size + 'px');
+      grunt.log.writeln('\u2713'.green, image, size + 'px');
       callback(null, destPath);
     });
   }
@@ -75,13 +76,12 @@ module.exports = function  (grunt) {
   function handleError (err) {
 
     grunt.log.error(err);
-    grunt.fatal();
+    grunt.fatal(err);
   }
 
   grunt.registerTask('tape-measure', function () {
 
     var done = this.async();
-    var target = this.target;
 
     var options = this.options({
       'srcDir':'../',
@@ -93,8 +93,6 @@ module.exports = function  (grunt) {
       'glob':'**/*.jpg'
     });
 
-    buildImages(options, function () {
-      done();
-    });
+    buildImages(options, done);
   });
 };

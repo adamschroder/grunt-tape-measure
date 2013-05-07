@@ -1,6 +1,6 @@
 {
   "name": "tape-measure",
-  "version": "0.0.0",
+  "version": "0.0.10",
   "description": "Bulk resize files to taste",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "resize",
     "images"
   ],
-  "author": "Adam Schroder",
+  "author": "Adam Schroder <adamknows@gmail.com>",
   "contributors": [
     "Aditya <aditya@netroy.in>"
   ],
@@ -22,7 +22,6 @@
   "readmeFilename": "README.md",
   "gitHead": "c1a6bf2fcd3ab38037bd9b51b0ce319c5245f048",
   "dependencies": {
-    "async": "0.2.5",
     "grunt": "~0.4.1",
     "glob": "3.1.20",
     "imagemagick": "0.1.3"
