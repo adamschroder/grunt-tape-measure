@@ -37,7 +37,7 @@ module.exports = function  (grunt) {
   function buildImages (options, callback) {
 
     glob(options.glob, {
-      'cwd': options.sourceDir
+      'cwd': options.srcDir
     }, function(err, images) {
 
       if (err) {
@@ -90,7 +90,7 @@ module.exports = function  (grunt) {
       'quality': 0.8,
       'progressive': false,
       'format':'jpg',
-      'glob':'*.jpg'
+      'glob':'**/*.jpg'
     });
 
     buildImages(options, function () {
