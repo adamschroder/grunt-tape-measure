@@ -20,6 +20,7 @@
   "readmeFilename": "README.md",
   "gitHead": "c1a6bf2fcd3ab38037bd9b51b0ce319c5245f048",
   "dependencies": {
+    "async": "0.2.5",
     "grunt": "~0.4.1",
     "glob": "3.1.20",
     "imagemagick": "0.1.3"

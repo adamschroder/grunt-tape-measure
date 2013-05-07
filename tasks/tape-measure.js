@@ -74,7 +74,7 @@ module.exports = function  (grunt) {
 
   function handleError (err) {
 
-    grunt.log.error(err.message);
+    grunt.log.error(err);
     grunt.fatal();
   }
 
