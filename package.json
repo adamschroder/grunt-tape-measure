@@ -1,7 +1,7 @@
 {
   "name": "tape-measure",
   "version": "0.0.0",
-  "description": "Resize and crush files from a directory",
+  "description": "Bulk resize files to sizes",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,8 +12,7 @@
   },
   "keywords": [
     "resize",
-    "images",
-    "crush"
+    "images"
   ],
   "author": "Adam Schroder",
   "license": "MIT",
