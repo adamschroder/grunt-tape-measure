@@ -37,10 +37,16 @@ Tape-measure accepts options on how to ouptut your images. In grunt.initConfig s
   }
 ```
 
-srcDir is a directory of images you wish to resize.
-excluded is an array of any files that you wish to be skipped.
-sizes is an array of sizes you wish to resize to. These will be the directory names created.
-quality is the quality of the outputted image. (0-1)
-progressive is the standard ImageMagick interlace setting
-format is the outputted string
-glob is the patter for selecting files in the srcDir
+`srcDir` is a directory of images you wish to resize.
+
+`excluded` is an array of any files that you wish to be skipped.
+
+`sizes` is an array of sizes you wish to resize to. These will be the directory names created.
+
+`quality` is the quality of the outputted image. (0-1)
+
+`progressive` is the standard ImageMagick interlace setting
+
+`format` is the outputted string
+
+`glob` is the patter for selecting files in the srcDir
