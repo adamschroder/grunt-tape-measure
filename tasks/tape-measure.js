@@ -36,9 +36,7 @@ module.exports = function  (grunt) {
 
   function buildImages (options, callback) {
 
-    var pattern = '**/*.' + options.format;
-
-    glob(pattern, {
+    glob(options.glob, {
       'cwd': options.sourceDir
     }, function(err, images) {
 
@@ -91,7 +89,8 @@ module.exports = function  (grunt) {
       'sizes': [640, 768, 1024, 2048],
       'quality': 0.8,
       'progressive': false,
-      'format':'jpg'
+      'format':'jpg',
+      'glob':'**/*.jpg'
     });
 
     buildImages(options, function () {
