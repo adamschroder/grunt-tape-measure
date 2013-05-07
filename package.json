@@ -15,6 +15,9 @@
     "images"
   ],
   "author": "Adam Schroder",
+  "contributors": [
+    "Aditya <aditya@netroy.in>"
+  ],
   "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "c1a6bf2fcd3ab38037bd9b51b0ce319c5245f048",
